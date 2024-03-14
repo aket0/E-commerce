@@ -1,0 +1,115 @@
+* {
+    font-size: 30px;
+    
+}
+nav{
+    background-color: forestgreen;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1%;
+    width: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+}
+.navLogo{
+    width: 80%;
+    text-align: left;
+}
+h1 {
+    color: white;
+    font-size: 40px;
+}
+Button{
+    border: none;
+    background: transparent;
+    color: white;
+}
+
+.navLink {
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    justify-content: space-evenly;
+}
+
+nav Button :hover {
+    transform: scale(1.1)
+}
+.counter{
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 3.5%;
+    color: forestgreen;
+    font-size: 0.5em;
+    background-color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.mobileNavbar {
+    display: none;
+}
+
+@media screen and (max-width: 500px){
+    
+    .DesktopNav{
+        display: none;
+    }
+    .mobileNavbar{
+        display: flex;
+    }
+    nav{
+       
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+       
+        
+    }
+
+    .navLogo{
+        position: fixed;
+        text-align: center;
+        top: 0;
+        background-color: forestgreen;
+        width: 100%;
+    }
+
+    .navLink{
+        width: 100%;
+        padding: 6%;
+        float: inline-end;
+        position: fixed;
+        bottom: 0;
+        align-items: center;
+        justify-content: space-around;
+        z-index: 999;
+        overflow: hidden;
+        background-color: forestgreen;
+        overflow: hidden;
+    }
+    .navLink button {
+        color: white;
+        width: 0.5em;
+        
+
+
+    }
+    .counter{
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        color: forestgreen;
+        left: 24%;
+        top: 21%;
+        font-size: 0.4em;
+        background-color: white;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+    }
+}

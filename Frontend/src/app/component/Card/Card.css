@@ -1,0 +1,175 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    width: 230px;
+    height: 400px;
+    margin: 30px;
+    padding: 0;
+    align-items: center;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    overflow: hidden;
+}
+
+.cardImg {
+    width: 100%;
+    height: 50vw;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card:hover {
+    transition-duration: 500ms;
+    transition-property: transform;
+    transform: scale(1.1);
+}
+
+.card:hover img {
+    transition-duration: 500ms;
+    transition-property: transform;
+    transform: scale(1.2);
+}
+
+.cardBody {
+    width: 100%;
+    height: 25%;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 1px;
+    background-color: white;
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+    font-size: 0.8em;
+    padding: 0;
+    margin-bottom: 7%;
+}
+
+.cardInfo p {
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    justify-content: center;
+    font-size: 0.9em;
+    color: rgb(135, 113, 99);
+}
+
+.cardBtn {
+    
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: forestgreen;
+    overflow: hidden;
+    bottom: 0;
+}
+
+.cardBtn :hover {
+    color: black;
+    border-color: black;
+}
+
+.dotButton {
+    background-color: rgb(135, 113, 99);
+    
+}
+
+.cardBtn button {
+    color: white;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.moreButtonIcon {
+    width: 0.8em;
+}
+.cartButtonIcon {
+    width: 0.8em;
+}
+
+.cardTitle h3 {
+    padding-bottom: 0;
+    height: 2%;
+    margin-top: 1%;
+    font-size: 0.6em;
+}
+
+.cardTitle {
+    width: 100%;
+    height: 15%;
+    color: black;
+    background-color: white;
+}
+.typeIcon{
+    width: 0.8em;
+    height: 0.8em;
+}
+.weaterIcon{
+    width: 0.8em ;
+    height: 0.8em;
+}
+
+@media all and (max-width: 500px) {
+    .card {
+        width: 100%;
+        max-width: 230px;
+        height: 400px;
+        
+    }
+
+    .cardInfo{
+        align-content: center;
+    }
+
+   .cardInfo p{
+        font-size: 0.8em;
+        align-items: center;
+    }
+
+    .cardImg {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .cartButtonIcon{
+        width: 0.6em;
+    }
+    .moreButtonIcon{
+        width: 0.6em;
+    }
+
+    .cardTitle h3 {
+        font-size: 0.6em;
+    }
+    .typeIcon{
+        width: 0.6em;
+        height: 0.6em;
+        align-items: center;
+    }
+    .weaterIcon{
+
+        width: 0.6em;
+        height: 0.6em;
+
+    }
+}

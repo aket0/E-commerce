@@ -1,0 +1,784 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/globals.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/component/Navbar/Navbar.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+#navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+   
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}    
+#navbar ul {
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-self: start;
+    justify-content: space-evenly;
+    overflow: scroll;
+}
+
+#navbar button {
+    color: black;
+}
+
+#navbar button:hover {
+    
+        transform: scale(1.1);
+        color: forestgreen
+    
+}
+
+
+@media screen and (max-width: 500px){
+
+    #navbar {
+        padding: 0;
+        position: fixed;
+        margin-top: 25%;
+        background-color: white;
+    }
+
+
+    #navbar ul {
+        list-style-type: none;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        overflow-x: scroll;
+        align-self: flex-start;
+        scrollbar-width: none;
+        
+    }
+
+    li {
+        margin-right: 2%;
+    }
+    .no-horizontal-scrollbar {
+        
+        overflow-x: hidden;
+      }
+      #navbar ul::-webkit-scrollbar {
+        display: none; 
+    }
+}
+
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/component/Header/Header.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+* {
+    font-size: 30px;
+    
+}
+nav{
+    background-color: forestgreen;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1%;
+    width: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+}
+.navLogo{
+    width: 80%;
+    text-align: left;
+}
+h1 {
+    color: white;
+    font-size: 40px;
+}
+Button{
+    border: none;
+    background: transparent;
+    color: white;
+}
+
+.navLink {
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    justify-content: space-evenly;
+}
+
+nav Button :hover {
+    transform: scale(1.1)
+}
+.counter{
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 3.5%;
+    color: forestgreen;
+    font-size: 0.5em;
+    background-color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.mobileNavbar {
+    display: none;
+}
+
+@media screen and (max-width: 500px){
+    
+    .DesktopNav{
+        display: none;
+    }
+    .mobileNavbar{
+        display: flex;
+    }
+    nav{
+       
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+       
+        
+    }
+
+    .navLogo{
+        position: fixed;
+        text-align: center;
+        top: 0;
+        background-color: forestgreen;
+        width: 100%;
+    }
+
+    .navLink{
+        width: 100%;
+        padding: 6%;
+        float: inline-end;
+        position: fixed;
+        bottom: 0;
+        align-items: center;
+        justify-content: space-around;
+        z-index: 999;
+        overflow: hidden;
+        background-color: forestgreen;
+        overflow: hidden;
+    }
+    .navLink button {
+        color: white;
+        width: 0.5em;
+        
+
+
+    }
+    .counter{
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        color: forestgreen;
+        left: 24%;
+        top: 21%;
+        font-size: 0.4em;
+        background-color: white;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+    }
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/component/Body/Body.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+#body {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-image: url(/_next/static/media/bodybg.eb1eef5e.jpg);
+    background-position-x:center;
+    background-position-y: center ;
+    padding-top: 2%;
+
+}
+
+#body > div {
+    width: 90%;
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width: 500px){
+    #body{
+        background-attachment: fixed;
+        margin-top: 50%;
+        margin-bottom: 20%;
+        
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    #body > div{
+        width: 60%;
+        
+    }
+
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/component/Card/Card.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    width: 230px;
+    height: 400px;
+    margin: 30px;
+    padding: 0;
+    align-items: center;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    overflow: hidden;
+}
+
+.cardImg {
+    width: 100%;
+    height: 50vw;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card:hover {
+    transition-duration: 500ms;
+    transition-property: transform;
+    transform: scale(1.1);
+}
+
+.card:hover img {
+    transition-duration: 500ms;
+    transition-property: transform;
+    transform: scale(1.2);
+}
+
+.cardBody {
+    width: 100%;
+    height: 25%;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 1px;
+    background-color: white;
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+    font-size: 0.8em;
+    padding: 0;
+    margin-bottom: 7%;
+}
+
+.cardInfo p {
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    justify-content: center;
+    font-size: 0.9em;
+    color: rgb(135, 113, 99);
+}
+
+.cardBtn {
+    
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: forestgreen;
+    overflow: hidden;
+    bottom: 0;
+}
+
+.cardBtn :hover {
+    color: black;
+    border-color: black;
+}
+
+.dotButton {
+    background-color: rgb(135, 113, 99);
+    
+}
+
+.cardBtn button {
+    color: white;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.moreButtonIcon {
+    width: 0.8em;
+}
+.cartButtonIcon {
+    width: 0.8em;
+}
+
+.cardTitle h3 {
+    padding-bottom: 0;
+    height: 2%;
+    margin-top: 1%;
+    font-size: 0.6em;
+}
+
+.cardTitle {
+    width: 100%;
+    height: 15%;
+    color: black;
+    background-color: white;
+}
+.typeIcon{
+    width: 0.8em;
+    height: 0.8em;
+}
+.weaterIcon{
+    width: 0.8em ;
+    height: 0.8em;
+}
+
+@media all and (max-width: 500px) {
+    .card {
+        width: 100%;
+        max-width: 230px;
+        height: 400px;
+        
+    }
+
+    .cardInfo{
+        align-content: center;
+    }
+
+   .cardInfo p{
+        font-size: 0.8em;
+        align-items: center;
+    }
+
+    .cardImg {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .cartButtonIcon{
+        width: 0.6em;
+    }
+    .moreButtonIcon{
+        width: 0.6em;
+    }
+
+    .cardTitle h3 {
+        font-size: 0.6em;
+    }
+    .typeIcon{
+        width: 0.6em;
+        height: 0.6em;
+        align-items: center;
+    }
+    .weaterIcon{
+
+        width: 0.6em;
+        height: 0.6em;
+
+    }
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/component/Cart/Cart.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+
+.cart {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    justify-content: left;
+    align-items: center;
+    font-size: 0.5em;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-collapse: collapse;
+    margin-right: 0%;
+    right: 0;
+    z-index: 999;
+    max-height: 750px;
+    overflow-y: scroll;
+    
+    
+    
+    
+}
+table {
+    width: 100%;
+    display: table;
+    border-spacing: 0;
+    border-collapse: separate;
+    border: 3px solid forestgreen;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    
+    
+}
+
+
+.titleCart{
+    width: 100%;
+    color: white;
+    position: -webkit-sticky;
+    position: sticky;
+    
+}
+thead tr {
+    width: 100%;
+    
+}
+
+.itemQte{
+    width: 50%;
+}
+
+
+.nameItem{
+   display: flex;
+   flex-direction: row;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.nameItem span{
+    font-size: 0.5em;
+    
+    
+
+}
+td img {
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 10px;
+    margin-left: 10%;
+
+}
+
+tr {
+    align-items: center;
+    border: 1px solid;
+    border-radius:  10px;
+    font-size: 0.8em;
+  
+    
+   
+  
+}
+
+tbody tr span {
+    width: 100%;
+    font-size: 1.2em;
+}
+
+tbody td {
+    
+    font-size: 0.6em;
+    align-items: center;
+    border-bottom: 3px solid forestgreen;
+    justify-content: space-between;
+    width: 120px;
+    padding: 2%;
+    
+    
+}
+
+
+.cartIcon td{
+    width: auto;
+    align-items: center;
+    justify-content: center;
+
+}
+
+th {
+    font-size: 0.1em;
+    background-color: forestgreen;
+    color: white;
+    
+   
+}
+
+tr th {
+    font-size: 0.5em;
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+.cartIcon {
+    display: flex;
+    flex-direction: row;
+    color: black;
+    
+    
+}
+.cartIcon button {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    color: black;
+    font-size: 0.7em;
+    margin-top: 10%;
+    
+    
+}
+
+
+thead, tfoot {
+    position: -webkit-sticky;
+    position: sticky;
+    width: 100%;
+    background-color: forestgreen;
+    color: white;
+  }
+
+  thead {
+    top: 0; /* Rendre l'en-tête de tableau sticky au haut */
+    z-index: 1; /* Assurer que l'en-tête reste au-dessus du corps scrollable */
+  }
+  
+  tfoot {
+    bottom: 0; /* Rendre le pied de tableau sticky en bas */
+    z-index: 1; /* Assurer que le pied de tableau reste au-dessus du corps scrollable */
+  }  
+
+
+@media screen and (max-width: 500px){
+
+.cart {
+    position: fixed;
+    width: 100%;
+    max-height: 91.5%;
+    border-radius: 0;
+    
+}
+tfoot td{
+    font-size: 0.8em;
+}
+
+}
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/component/Login/Login.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
+.loginComponent{
+    
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.5em;
+    border: 10px solid forestgreen;
+    border-top: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    right: 0;
+    padding: 15px;
+    z-index: 999;
+       
+}
+.userPhotoDiv img {
+width: 50px;
+border: 8px solid forestgreen;
+border-radius: 120px;
+padding: 10px;
+}
+
+.switchFrame{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-evenly;
+align-content: center;
+align-self: center;
+width: 80%;
+}
+
+
+.loginFormDiv{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+align-self: center;
+width: 100%;
+button {
+    background-color: forestgreen;
+    width: 150px;
+    margin-top: 6%;
+    margin-bottom: 6%;
+    border-radius: 10px;
+}
+
+
+}
+
+form{
+width: 80%;
+text-align: left;
+align-self: center;
+font-size: 0.8em;
+
+}
+
+form label{
+font-size: 0.8em;
+}
+
+::-webkit-input-placeholder { font-size: 0.7em; }
+::-moz-placeholder { font-size: 0.7em; } /* firefox 19+ */
+:-ms-input-placeholder { font-size: 0.7em; } /* ie */
+input:-moz-placeholder { font-size: 0.7em; }
+
+form input{
+width: 100%;
+}
+
+
+.switchValue{
+font-size: 0.8em;
+}
+
+@media screen and (max-width: 500px){
+.loginComponent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90%;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    align-content: center;
+    align-self: center;
+    margin-top: 25%;
+    overflow-y: scroll;
+    z-index: 997;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-collapse: collapse;
+    
+}
+.userPhotoDiv img {
+    width: 80px;
+}
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    align-self: center;
+    
+   
+
+}
+
+::-webkit-input-placeholder { font-size: 0.7em; }
+::-moz-placeholder { font-size: 0.7em; } /* firefox 19+ */
+:-ms-input-placeholder { font-size: 0.7em; } /* ie */
+input:-moz-placeholder { font-size: 0.7em; }
+
+form input{
+    width: 95%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+    align-self: flex-start;
+    
+    
+}
+form label{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.loginFormDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: auto;
+    align-self: center;
+}    
+
+}
