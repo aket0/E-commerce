@@ -17,7 +17,7 @@ export default function Home() {
 
 
   useEffect(() => {
-    fetch(`http://localhost:4000/api/itemList`) // Changez l'URL en fonction de votre configuration
+    fetch(`http://localhost:4000/api/itemList`)
       .then(res => res.json())
       .then(data => setList(data))
       .catch(error => console.error('Error fetching products:', error));
@@ -30,10 +30,10 @@ export default function Home() {
 
   const [selectedOption, setSelectedOption] = useState(null);
   const [cartItems, setCartItems] = useState(() => {
-    if (typeof window !== 'undefined') {
+   
     const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     return storedCartItems;
-    }
+  
   });
   
   const [isCartVisible, setCartVisible] = useState(false);
@@ -53,10 +53,12 @@ export default function Home() {
   
   const toggleCart = () => {
       setCartVisible(!isCartVisible);
+      setLogginVisible(false)
       
   };
   const toggleLogin = () => {
     setLogginVisible(!isLoginVisible);
+    setCartVisible(false);
   }
 
   const handleSelect = (type) => {
