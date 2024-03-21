@@ -1,7 +1,8 @@
 import "./Login.css";
 import Switch from "react-switch";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { User } from "src/app/object/User";
+import {jwtDecode} from "jwt-decode";
 
 function Login({ user }) {
   const [isLogged, setIsLogged] = useState(false)
@@ -13,20 +14,19 @@ function Login({ user }) {
   const [codePostal, setCodePostal] = useState("");
   const [city, setCity] = useState("");
   const [email, setEmail] = useState("");
+  const [jwtToken, setJwtToken] = useState("");
   const [superUser, setsuperUser] = useState(false);
   const [password, setPassword] = useState("");
-  const [rowPassword, setRowPassword] = useState("")
+
 
 
   const handleSwitchChange = (checked) => {
     setIsSwitched(checked);
   };
   
-
-  
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+
     try {
         const response = await fetch(`http://localhost:4000/api/user`, {
             method: "POST",
@@ -34,29 +34,28 @@ function Login({ user }) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ email, password }),
-            
-        })
+        });
+
         if (response.ok) {
             const responseData = await response.json();
             if (responseData.userExists) {
-             setIsLogged(true)
-              
-              
+                setIsLogged(true);
+                const token = responseData.userExists.token
+                const decodedToken = jwtDecode(token)
+                setJwtToken(decodedToken);
+                console.log(decodedToken); // Vérifiez que le jeton est correctement reçu
             } else {
-              setIsLogged(false);
-             
-             
-             
+                setErrorMessage("Email or password is incorrect");
             }
-          } else {
-            const errorData = await response.json();
-            setErrorMessage(errorData.message);
-          }
-        } catch (error) {
-          console.error("Erreur lors de la vérification de l'utilisateur :", error);
-          setErrorMessage("Erreur serveur lors de la vérification de l'utilisateur");
+        } else {
+            setErrorMessage("Error connecting to the server");
         }
-      };
+    } catch (error) {
+        console.error("Error authenticating user:", error);
+        setErrorMessage("Server error");
+    }
+};
+
       const addNewUser = async (event) => {
         event.preventDefault();
         
@@ -84,7 +83,8 @@ function Login({ user }) {
             if (response.ok) {
                 const responseData = await response.json();
                 if (responseData.userExists) {
-                 setIsLogged(true)
+                 
+                 setIsSwitched(true);
                   
                   
                 } else {
@@ -98,10 +98,11 @@ function Login({ user }) {
                 setErrorMessage(errorData.message);
               }
             } catch (error) {
-              console.error("Erreur lors de la vérification de l'utilisateur :", error);
-              setErrorMessage("Erreur serveur lors de la vérification de l'utilisateur");
+              console.error("Erreur lors de la creation de l'utilisateur :", error);
+              setErrorMessage("mail deja utilisé");
             }
           };
+     
   
       return (
         <div className="loginComponent">
@@ -186,12 +187,12 @@ function Login({ user }) {
             </div>
           ) : (
             <div className="loged">
-            <h2>Welcome back friend </h2>
+            <h2>Welcome back {jwtToken.name} </h2>
             <ul>
                 <li>Mes information</li>
                 <li>Mes achat</li>
                 <li>ai ai ai</li>
-                <input type="button" placeholder="logout" onClick={() => setIsLogged(false) }/>
+                <button type="submit" onClick={() => setIsLogged(false) }>Logout</button>
 
             </ul>
 

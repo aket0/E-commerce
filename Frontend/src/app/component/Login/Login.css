@@ -15,6 +15,13 @@
     right: 0;
     padding: 15px;
     z-index: 999;
+    button {
+        background-color: forestgreen;
+        width: 150px;
+        margin-top: 6%;
+        margin-bottom: 6%;
+        border-radius: 10px;
+    }
        
 }
 .userPhotoDiv img {

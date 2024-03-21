@@ -8,6 +8,10 @@ function sortAlphabetically(items) {
 }
 
 function Body({ selectedOption, addToCart, list }) {
+
+  
+
+
   const filteredItems = selectedOption
     ? sortAlphabetically(
         list.filter((item) => item.type === selectedOption || item.weater === selectedOption)
