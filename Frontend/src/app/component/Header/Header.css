@@ -3,13 +3,13 @@
     
 }
 nav{
-    background-color: forestgreen;
+    background-color: #567361;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 1%;
     width: 100%;
-    height: 3em;
+    height: 1.5em;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
 }
@@ -20,7 +20,7 @@ nav{
 }
 h1 {
     color: white;
-    font-size: 40px;
+    font-size: 30px;
 }
 Button{
     border: none;
@@ -42,7 +42,7 @@ nav Button :hover {
     position: absolute;
     justify-content: center;
     align-items: center;
-    top: 3.5%;
+    top: 1.5%;
     color: forestgreen;
     font-size: 0.5em;
     background-color: white;
@@ -68,6 +68,8 @@ nav Button :hover {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: fixed;
+        top: 0;
         
        
         
@@ -77,7 +79,7 @@ nav Button :hover {
         position: fixed;
         text-align: center;
         top: 0;
-        background-color: forestgreen;
+        background-color: #679436;
         width: 100%;
     }
 
@@ -91,7 +93,7 @@ nav Button :hover {
         justify-content: space-around;
         z-index: 999;
         overflow: hidden;
-        background-color: forestgreen;
+        background-color: #679436;
         overflow: hidden;
     }
     .navLink button {

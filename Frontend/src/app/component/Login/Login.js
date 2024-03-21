@@ -133,12 +133,12 @@ function Login({ user }) {
                     <form onSubmit={handleSubmit} method="post">
                       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
                       <label>
-                        email
-                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required  name="email"  />
+                        E-mail
+                        <input type="email" value={email} placeholder="Your e-mail" onChange={(e) => setEmail(e.target.value)} required  name="email"  />
                       </label>
                       <label>
-                        password
-                        <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} required  value={password} />
+                        Password
+                        <input type="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required  value={password} />
                       </label>
                       <button type="submit">
                         <span>log in</span>
