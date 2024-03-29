@@ -1,7 +1,7 @@
 import "./Login.css";
 import Switch from "react-switch";
 import { useState, useEffect } from "react";
-import { User } from "src/app/object/User";
+
 import {jwtDecode} from "jwt-decode";
 
 function Login({ user }) {
@@ -43,7 +43,7 @@ function Login({ user }) {
                 const token = responseData.userExists.token
                 const decodedToken = jwtDecode(token)
                 setJwtToken(decodedToken);
-                console.log(decodedToken); // Vérifiez que le jeton est correctement reçu
+                console.log(decodedToken); 
             } else {
                 setErrorMessage("Email or password is incorrect");
             }

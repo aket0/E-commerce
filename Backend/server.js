@@ -1,7 +1,9 @@
 const http = require('http');
 const database = require('./database');
 const { checkUserExists } = require('./user');
-const { createNewUser } = require('./newUser')
+const { createNewUser } = require('./newUser');
+const {productData} = require('./product')
+const url = require('url');
  
 http.createServer(async (req, res) => {
    
@@ -20,8 +22,23 @@ http.createServer(async (req, res) => {
         res.end();
         return;
     }
-
-    if (req.url === '/api/itemList') {
+    if (req.url.startsWith('/api/product/') && req.method === 'GET') {
+        try {
+            // Extraire l'ID du produit de l'URL
+            const productId = req.url.split('/').pop();
+    
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            const dataProduct = await productData(productId);
+            res.write(JSON.stringify(dataProduct));
+        } catch (error) {
+            console.error('Error processing request:', error);
+            res.writeHead(500, { 'Content-Type': 'text/plain' });
+            res.write('Internal Server Error');
+        } finally {
+            res.end();
+        }
+    }
+   else if (req.url === '/api/itemList') {
         try {
             res.writeHead(200, { 'Content-Type': 'application/json' });
             const dataset = await database.itemList();
@@ -29,6 +46,7 @@ http.createServer(async (req, res) => {
         } finally {
             res.end(); 
         }
+        
     } else if (req.url === '/api/user' && req.method === 'POST') {
         
         let data = '';

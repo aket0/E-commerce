@@ -1,0 +1,113 @@
+#container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+#row{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#frame{
+    margin-top: 5%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  
+   
+}
+
+
+#left-pannel{ 
+    
+    img {
+    width: 450px;
+    height: 450px;
+    border-radius: 25px;
+    align-self: flex-start;}
+     
+
+}
+#addToCart{
+    width: 72%;
+    background-color: #567361;
+    align-self: center;
+    border-radius: 10px;
+    height: 50px;
+}
+
+#right-pannel{
+    width: 1000px;
+    height: 450px;
+    min-height: 450px;
+    max-height: 450px;
+    align-content: space-between;
+    text-align: center;
+}
+
+#title{
+    display: flex;
+    text-align: left;
+
+}
+
+#title h1{
+    color: black;
+    margin-left: 150px;
+    
+}
+    #text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    #description{
+        word-wrap: break-word;
+        width: 70%;
+        max-height: 216px;
+        text-align: left;
+        justify-content: center;
+
+    }
+    #icon{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-content: center;
+        justify-content: space-evenly;
+        color:  #7BAB8D;
+        margin-top: 80px;
+        margin-bottom: 85px;
+    }
+    
+
+
+p img{
+    width: 35px;
+    height: 35px;
+}
+
+@media all and (max-width: 1120px) {
+    #frame{
+        flex-direction: column;
+        width: 90%;
+    }
+    #rightpanel{
+        width: 100%;
+    }
+    #left-pannel{
+        width: 100%;
+        p{
+            width: 100%;
+        }
+    }
+}
+

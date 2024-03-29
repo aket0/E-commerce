@@ -9,8 +9,10 @@
     align-items: center;
     justify-content: space-evenly;
     align-items: center;
-    box-shadow:9px 9px 18px #bababa,
-    -9px -9px 18px #ffffff;
+    
+background: linear-gradient(315deg, #f0f0f0, #cacaca);
+box-shadow:  -7px -7px 12px #c5c5c5,
+             7px 7px 12px #fbfbfb;
     overflow: hidden;
 }
 

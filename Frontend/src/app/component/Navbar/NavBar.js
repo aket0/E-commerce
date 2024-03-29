@@ -19,25 +19,25 @@ function Navbar({ onSelect, onWeaterSelect }) {
       <div id="navbar">
         <ul>
         <li>
-            <button onClick={() => handleClick("")}>All</button>
+            <button><a href="#all">All</a></button>
           </li>
           <li>
-            <button onClick={() => handleWeater("inside")}>Inside</button>
+            <button><a href="#inside">Inside</a></button>
           </li>
           <li>
-            <button onClick={() => handleWeater("outside")}>Outside</button>
+            <a href="#outside">Outside</a>
           </li>
           <li>
-            <button onClick={() => handleClick("cactus")}>Cactus</button>
+            <a href="#cactus">Cactus</a>
           </li>
           <li>
-            <button onClick={() => handleClick("flower")}>Flower</button>
+            <a href="#flower">Flower</a>
           </li>
           <li>
-            <button onClick={() => handleClick("vegetable")}>Vegetable</button>
+            <a href="#vegetable">Vegetable</a>
           </li>
           <li>
-            <button onClick={() => handleClick("tree")}>Tree</button>
+            <a href="#tree">Tree</a>
           </li>
         </ul>
       </div>

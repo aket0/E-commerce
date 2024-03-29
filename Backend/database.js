@@ -1,4 +1,3 @@
-
 const { MongoClient } = require("mongodb");
 const dotenv = require('dotenv') ;
 dotenv.config();
@@ -13,6 +12,7 @@ async function itemList() {
         const dataset = await client.db('myLittleJungle').collection('dwwm').find().toArray();
         console.log("item collection return a successfull connexion")
         return JSON.stringify(dataset);
+        
         
     }
     catch {

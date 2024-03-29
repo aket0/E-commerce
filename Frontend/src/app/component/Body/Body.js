@@ -1,6 +1,7 @@
 import React, {useRef} from 'react';
 import Card from '../Card/Card';
 import './Body.css'; 
+import { useRouter } from 'next/navigation';
 
 function sortAlphabetically(items) {
   return items.sort((a, b) => a.name.localeCompare(b.name));
@@ -34,12 +35,14 @@ function Body({ selectedOption, addToCart, list }) {
   };
  
 
+  
+
   return (
     <div id="body">
     <div id='row'>
       {Object.keys(groupedItems).map((option, index) => (
         <div key={index} className="option-container">
-          <h2>{option.charAt(0).toUpperCase() + option.slice(1)}</h2>
+          <h2 id={option}>{option.charAt(0).toUpperCase() + option.slice(1)}</h2>
           <div id="prod" ref={containerRef} onWheel={(event) => handleScroll(event)}>
             {groupedItems[option].map((item, idx) => (
               <Card key={idx} item={item} addToCart={addToCart} />

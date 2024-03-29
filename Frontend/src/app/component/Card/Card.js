@@ -1,5 +1,6 @@
 import "./Card.css";
 import React from "react";
+import { useRouter } from 'next/navigation'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
@@ -10,11 +11,17 @@ import faFlower from "../../../../public/assetes/tulipe.png"
 import faVegetable from "../../../../public/assetes/fruit.png";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
+import Link from "next/link";
 
 function Card(props){
 
     let weaterIcon = null;
     let typeIcon = null
+    const router = useRouter();
+
+    
+        
+     
 
     const handleAddToCart = () => {
         props.addToCart({
@@ -67,7 +74,7 @@ function Card(props){
                 </div>
                 
                 <div className="cardBtn">
-                <button className="dotButton" ><FontAwesomeIcon className="moreButtonIcon" icon={faEllipsis} /></button>
+                <button className="dotButton"><Link href={`/products/${props.item._id}`}><FontAwesomeIcon className="moreButtonIcon" icon={faEllipsis} /></Link>L</button>
                 <button className="cartButton" onClick={handleAddToCart}><FontAwesomeIcon className="cartButtonIcon" icon={faCartShopping} /></button>
                     
                 </div>

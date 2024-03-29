@@ -2,7 +2,6 @@ const { MongoClient } = require("mongodb");
 const dotenv = require('dotenv') ;
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken');
-
 dotenv.config();
 
 async function checkUserExists(email, password) {
@@ -23,7 +22,7 @@ async function checkUserExists(email, password) {
                     codePostal: userExists.codePostal,
                     superUser: userExists.superUser
 
-                    // Autres informations pertinentes...
+                    
                 };
                 console.log(payload)
                 const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' });
