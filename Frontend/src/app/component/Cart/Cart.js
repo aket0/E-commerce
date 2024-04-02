@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import "./Cart.css";
+import Link from "next/link";
 
 function Cart({ cartItems, handleMinus, handlePlus, handleDelete, totalProduct, totalSum }) {
   

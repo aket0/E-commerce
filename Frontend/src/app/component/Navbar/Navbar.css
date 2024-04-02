@@ -5,6 +5,7 @@
     justify-content: center;
     background-color: #7BAB8D ;
     width: 100%;
+    padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }    
 #navbar ul {
@@ -17,17 +18,34 @@
     overflow: scroll;
 }
 
+#navbar li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 6%;
+}
+
+.typeIcon{
+    width: 1em;
+    height: 1em;
+    margin-right: 5px;
+    
+}
+
 #navbar a {
     color: black;
     text-decoration: none;
+    font-size: 0.7em;
 }
 
-#navbar a:hover {
-    
-        transform: scale(1.5);
-        color: #567361
-    
+#navbar li:hover .typeIcon,
+#navbar li:hover a {
+    color: #567361 !important;
 }
+
+    
+    
+
 
 
 @media screen and (max-width: 500px){

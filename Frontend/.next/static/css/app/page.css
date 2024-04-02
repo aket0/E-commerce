@@ -58,6 +58,7 @@ nextjs-portal {
     justify-content: center;
     background-color: #7BAB8D ;
     width: 100%;
+    padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }    
 #navbar ul {
@@ -70,17 +71,34 @@ nextjs-portal {
     overflow: scroll;
 }
 
+#navbar li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 6%;
+}
+
+.typeIcon{
+    width: 1em;
+    height: 1em;
+    margin-right: 5px;
+    
+}
+
 #navbar a {
     color: black;
     text-decoration: none;
+    font-size: 0.7em;
 }
 
-#navbar a:hover {
-    
-        transform: scale(1.5);
-        color: #567361
-    
+#navbar li:hover .typeIcon,
+#navbar li:hover a {
+    color: #567361 !important;
 }
+
+    
+    
+
 
 
 @media screen and (max-width: 500px){
@@ -260,7 +278,15 @@ background: linear-gradient(315deg, #f0f0f0, #cacaca);
 box-shadow:  -7px -7px 12px #c5c5c5,
              7px 7px 12px #fbfbfb;
     overflow: hidden;
+    Link{
+        color: white;
+    }
 }
+Link{
+    color: white;
+    text-decoration: none;
+}
+
 
 .cardImg {
     width: 100%;
@@ -299,7 +325,7 @@ img {
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     padding: 1px;
-    background-color:  	 	#E5E4EA;
+    background-color: white;
 }
 
 .cardInfo {
@@ -344,6 +370,9 @@ img {
     background-color: #115969;
     
 }
+.dotButton > * {
+    color: #E5E4EA;
+}
 
 .cardBtn button {
     color: white;
@@ -373,7 +402,7 @@ img {
     width: 100%;
     height: 15%;
     color: black;
-    background-color:  	#E5E4EA;
+    background-color:  white;
 }
 .typeIcon{
     width: 0.8em;
@@ -473,6 +502,7 @@ h2{
     
 
 }
+
 #prod > * {
     flex: 0 0 auto; 
 }

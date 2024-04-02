@@ -84,7 +84,8 @@ import dynamic from 'next/dynamic';
         name: item.name,
         price: item.price,
         src: item.src,
-        qte: 1
+        qte: 1,
+        description: item.description
       };
   
       setCartItems([...cartItems, newItem]);

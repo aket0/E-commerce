@@ -1,10 +1,9 @@
 import "./Login.css";
 import Switch from "react-switch";
 import { useState, useEffect } from "react";
-
 import {jwtDecode} from "jwt-decode";
 
-function Login({ user }) {
+const Login = (user) => {
   const [isLogged, setIsLogged] = useState(false)
   const [isSwitch, setIsSwitched] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");

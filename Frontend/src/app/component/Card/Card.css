@@ -14,7 +14,15 @@ background: linear-gradient(315deg, #f0f0f0, #cacaca);
 box-shadow:  -7px -7px 12px #c5c5c5,
              7px 7px 12px #fbfbfb;
     overflow: hidden;
+    Link{
+        color: white;
+    }
 }
+Link{
+    color: white;
+    text-decoration: none;
+}
+
 
 .cardImg {
     width: 100%;
@@ -53,7 +61,7 @@ img {
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     padding: 1px;
-    background-color:  	 	#E5E4EA;
+    background-color: white;
 }
 
 .cardInfo {
@@ -98,6 +106,9 @@ img {
     background-color: #115969;
     
 }
+.dotButton > * {
+    color: #E5E4EA;
+}
 
 .cardBtn button {
     color: white;
@@ -127,7 +138,7 @@ img {
     width: 100%;
     height: 15%;
     color: black;
-    background-color:  	#E5E4EA;
+    background-color:  white;
 }
 .typeIcon{
     width: 0.8em;

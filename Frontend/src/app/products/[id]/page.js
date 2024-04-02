@@ -1,7 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import Header from '../../component/Header/Header';
-import Navbar from '../../component/Navbar/NavBar';
 import Cart from '../../component/Cart/Cart';
 import Login from '@/component/Login/Login';
 import dynamic from 'next/dynamic';
@@ -70,7 +69,7 @@ const ProductPage = () => {
     if (existingItem) {
       const updatedCartItems = cartItems.map(cartItem => {
         if (cartItem.name === product.name) {
-          return { ...cartItem, qte: cartItem.qte + 1 };
+          return { ...cartItem, qte: cartItem.qte + product.qte };
         }
         return cartItem;
       });
@@ -81,8 +80,10 @@ const ProductPage = () => {
         name: product.name,
         price: product.price,
         src: product.src,
-        qte: 1
+        qte: product.qte,
+        description: product.description
       };
+      
   
       setCartItems([...cartItems, newItem]);
     }
@@ -124,11 +125,11 @@ const ProductPage = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        // Extraire l'ID du produit de l'URL
+        
         const productId = window.location.pathname.split('/').pop();
-        console.log(productId);
+        
 
-        // Envoyer une requête GET à votre API pour récupérer les détails du produit
+        
         const response = await fetch(`http://localhost:4000/api/product/${productId}`);
 
         
@@ -137,7 +138,7 @@ const ProductPage = () => {
           const data = await response.json();
           
           setProduct(data);
-          console.log(product);
+          
           
         } else {
           console.error('Error fetching product data:', response.statusText);
@@ -155,7 +156,6 @@ const ProductPage = () => {
       <Header onCartToggle={toggleCart} totalProduct={totalProduct} onLogginToggle={toggleLogin} user={user}/>
       {isLoginVisible && <Login />}
       {isCartVisible && <Cart cartItems={cartItems} handleMinus={handleMinus} handlePlus={handlePlus} handleDelete={handleDelete} totalProduct={totalProduct} totalSum={totalSum}  />}
-      <Navbar onSelect={handleSelect} onWeaterSelect={handleWeater} />
      {product && <Item product={product} addToCart={addToCart}/>}
       
     </div>

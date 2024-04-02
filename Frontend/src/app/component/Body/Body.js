@@ -28,12 +28,17 @@ function Body({ selectedOption, addToCart, list }) {
   }, {});
   const containerRef = useRef(null);
 
-  const handleScroll = (event) => {
+  const handleWheel = (event) => {
     const container = containerRef.current;
-    const delta = Math.sign(event.deltaY) * 500; 
-    container.scrollLeft += delta;
+    const deltaX = event.deltaX;
+    const deltaY = event.deltaY;
+
+    // Si le défilement horizontal est détecté, empêchez la propagation de l'événement
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      event.preventDefault(); // Empêche le défilement vertical
+      container.scrollLeft += deltaX;; // Empêche la propagation de l'événement de défilement
+    }
   };
- 
 
   
 
@@ -43,7 +48,7 @@ function Body({ selectedOption, addToCart, list }) {
       {Object.keys(groupedItems).map((option, index) => (
         <div key={index} className="option-container">
           <h2 id={option}>{option.charAt(0).toUpperCase() + option.slice(1)}</h2>
-          <div id="prod" ref={containerRef} onWheel={(event) => handleScroll(event)}>
+          <div id="prod"  onWheel={handleWheel} ref={containerRef}>
             {groupedItems[option].map((item, idx) => (
               <Card key={idx} item={item} addToCart={addToCart} />
             ))}

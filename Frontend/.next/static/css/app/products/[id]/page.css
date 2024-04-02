@@ -120,77 +120,6 @@ nav Button :hover {
         height: 15px;
     }
 }
-/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/component/Navbar/Navbar.css ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************/
-#navbar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: #7BAB8D ;
-    width: 100%;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-}    
-#navbar ul {
-    list-style-type: none;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-self: start;
-    justify-content: space-evenly;
-    overflow: scroll;
-}
-
-#navbar a {
-    color: black;
-    text-decoration: none;
-}
-
-#navbar a:hover {
-    
-        transform: scale(1.5);
-        color: #567361
-    
-}
-
-
-@media screen and (max-width: 500px){
-
-    #navbar {
-        padding: 0;
-        position: fixed;
-        
-        background-color: #EBF2FA;
-    }
-
-
-    #navbar ul {
-        list-style-type: none;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        overflow-x: scroll;
-        align-self: flex-start;
-        scrollbar-width: none;
-        z-index: 0;
-        
-    }
-
-    li {
-        margin-right: 2%;
-    }
-    .no-horizontal-scrollbar {
-        
-        overflow-x: hidden;
-      }
-      #navbar ul::-webkit-scrollbar {
-        display: none; 
-    }
-}
-
-
 /*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/component/Cart/Cart.css ***!
   \*****************************************************************************************************************************************************************************************************************************************************************************/
@@ -548,6 +477,10 @@ form label{
 /*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/component/Item/Item.css ***!
   \*****************************************************************************************************************************************************************************************************************************************************************************/
+*{
+    margin: 0;
+    padding: 0;
+  }
 #container{
     display: flex;
     width: 100%;
@@ -557,18 +490,37 @@ form label{
 }
 #row{
     display: flex;
-    width: 90%;
-    justify-content: center;
-    align-items: center;
+    width: 70%;
+    flex-direction: column;
+   
+}
+#rollBackLink{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 35px;
+    text-decoration: none;
+
+}
+
+#rollBackLink > * {
+    margin-top: 35px;
+    align-self: flex-start;
+    text-decoration: none;
+    color: black; /* Aligne les éléments enfants à gauche à l'intérieur de l'élément */
+}
+Link {
+    text-decoration: none; /* Supprime la décoration de soulignement du lien */
 }
 
 
 #frame{
-    margin-top: 5%;
+    margin-top: 35px;
     justify-content: center;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 1145px;
   
    
 }
@@ -577,65 +529,126 @@ form label{
 #left-pannel{ 
     
     img {
-    width: 450px;
-    height: 450px;
+    width: 550px;
+    height: 550px;
     border-radius: 25px;
     align-self: flex-start;}
-     
-
+}
+#quantity{
+    width: 105px;
+    border: 1px solid #567361;
+    align-self: self-start;
+    font-size: 0.8em;
+    border-radius: 25px;
+    margin-top: 15px;
+    height: 50px;
+    color: #567361;
+    text-align: center;
+}
+select{
+    font-size: 0.8em;
+    background-color: white;
+}
+option{
+    font-size: 0.8em;
 }
 #addToCart{
-    width: 72%;
+    width: 365px;
     background-color: #567361;
-    align-self: center;
-    border-radius: 10px;
+    align-self: self-start;
+    border-radius: 25px;
+    margin-top: 15px;
     height: 50px;
+}
+#buyNow{
+    width: 365px;
+    border: 2px solid #567361;
+    align-self: self-start;
+    border-radius: 25px;
+    margin-top: 15px;
+    height: 50px;
+    color: #567361;
+}
+
+#buyNow > *{
+    text-decoration: none;
+    color: #567361;
 }
 
 #right-pannel{
-    width: 1000px;
-    height: 450px;
-    min-height: 450px;
-    max-height: 450px;
-    align-content: space-between;
+    flex: 1 1;
+    width: 545px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
+    height: 100%;
+    max-height: 450px; 
+    margin-left: 50px;
+    padding: 0 20px; ;
 }
 
 #title{
     display: flex;
-    text-align: left;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        margin-top: 8px;
+        
+   
 
 }
 
 #title h1{
     color: black;
-    margin-left: 150px;
+    text-align: left;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.5em;
     
 }
     #text{
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         margin-top: 20px;
+        text-align: left;
         margin-bottom: 30px;
     }
     #description{
         word-wrap: break-word;
-        width: 70%;
+        width: 100%;
+        font-size: 0.8em;
         max-height: 216px;
         text-align: left;
         justify-content: center;
+         
 
     }
     #icon{
         display: flex;
         flex-direction: row;
-        width: 100%;
+        width: 18%;
         align-content: center;
         justify-content: space-evenly;
         color:  #7BAB8D;
-        margin-top: 80px;
-        margin-bottom: 85px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    #pricing{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        text-align: left;
+        margin-top: 8px;
+
+    }
+    #price{
+        font-size: 0.6em;
+        margin-bottom: 5px;
+        color: gray;
+        margin-left: 2px;
     }
     
 
@@ -645,19 +658,64 @@ p img{
     height: 35px;
 }
 
-@media all and (max-width: 1120px) {
+@media all and (max-width: 1100px) {
     #frame{
         flex-direction: column;
-        width: 90%;
+        width: 60%;
     }
-    #rightpanel{
+    #right-pannel{
+        width: 550px;
+        margin-left: 0;
+        align-self: flex-start;
+        
+    }
+    #description{
         width: 100%;
     }
     #left-pannel{
         width: 100%;
+        margin-left: 0;
         p{
             width: 100%;
         }
+    }
+}
+@media all and (max-width: 500px){
+    
+    #row{
+        width: 90%;
+      
+        
+    }
+    #frame{
+        flex-direction: column;
+        width: 60%;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    #right-pannel{
+        width: 350px;
+        margin-left: 0;
+        align-self: flex-start;
+        padding: 0;
+        text-align: center;
+        
+    }
+    #description{
+        width: 90%;
+    }
+    #left-pannel{
+        width: 100%;
+        margin-left: 0;
+        p{
+            width: 100%;
+        }
+        img {
+            width: 300px;
+            height: 300px;
+            border-radius: 25px;
+            align-self: flex-start;}
     }
 }
 

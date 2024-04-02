@@ -2,14 +2,9 @@ import "./Card.css";
 import React from "react";
 import { useRouter } from 'next/navigation'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
-import { faHouse } from "@fortawesome/free-solid-svg-icons";
-import { faSun } from "@fortawesome/free-solid-svg-icons";
-import { faTree } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping, faHouse, faSun, faTree, faCarrot, faLemon, faEllipsis } from '@fortawesome/free-solid-svg-icons'
+import { faPagelines} from "@fortawesome/free-brands-svg-icons"
 import faCactus from "../../../../public/assetes/cactus.png";
-import faFlower from "../../../../public/assetes/tulipe.png"
-import faVegetable from "../../../../public/assetes/fruit.png";
-import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -28,31 +23,40 @@ function Card(props){
             name: props.item.name,
             price: props.item.price,
             src: props.item.src,
-            qte: 1
+            qte: 1,
+            description: props.item.description
         });
     }
 
-
-
-
-    
-    if (props.item.weater === "inside"){
-        weaterIcon = <FontAwesomeIcon className="weaterIcon" icon={faHouse} />
-    }else{
-        weaterIcon = <FontAwesomeIcon className="weaterIcon" icon={faSun} />
-    }
-    if (props.item.type === "tree"){
-        typeIcon = <FontAwesomeIcon className="typeIcon" icon={faTree} />
-    }else if (props.item.type === "cactus"){
-        typeIcon = <Image className="typeIcon" src={faCactus}  alt=""/>
-
-    }else if (props.item.type === "flower"){
-        typeIcon = <Image className="typeIcon" src={faFlower}  alt=""/>
-
-    }else{
-        typeIcon = <Image className="typeIcon" src={faVegetable}  alt=""/>
-    }
-
+    switch (props.item.weater) {
+        case "inside":
+          weaterIcon = <FontAwesomeIcon className="weaterIcon" icon={faHouse} />;
+          break;
+        default:
+          weaterIcon = <FontAwesomeIcon className="weaterIcon" icon={faSun} />;
+          break;
+      }
+      
+      switch (props.item.type) {
+        case "tree":
+          typeIcon = <FontAwesomeIcon className="typeIcon" icon={faTree} />;
+          break;
+        case "cactus":
+          typeIcon = <Image className="typeIcon" src={faCactus}  alt="" />;
+          break;
+        case "flower":
+          typeIcon = <FontAwesomeIcon className="typeIcon" icon={faPagelines}  alt="" />;
+          break;
+        case "vegetable":
+          typeIcon = <FontAwesomeIcon className='typeIcon' icon={faCarrot} />;
+          break;
+        case "fruit":
+          typeIcon = <FontAwesomeIcon className='typeIcon' icon={faLemon} />;
+          break;
+        default:
+          break;
+      }
+      
 
     
     
@@ -70,11 +74,11 @@ function Card(props){
                 <div className="cardInfo">
                 <p>{weaterIcon}</p>
                 <p>{typeIcon}</p>
-                <p>{props.item.price} €</p>
+                <p>${props.item.price}</p>
                 </div>
                 
                 <div className="cardBtn">
-                <button className="dotButton"><Link href={`/products/${props.item._id}`}><FontAwesomeIcon className="moreButtonIcon" icon={faEllipsis} /></Link>L</button>
+                <button className="dotButton"><Link href={`/products/${props.item._id}`}><FontAwesomeIcon className="moreButtonIcon" icon={faEllipsis} /></Link></button>
                 <button className="cartButton" onClick={handleAddToCart}><FontAwesomeIcon className="cartButtonIcon" icon={faCartShopping} /></button>
                     
                 </div>
