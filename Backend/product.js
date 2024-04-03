@@ -7,10 +7,8 @@ async function productData(id) {
         await client.connect();
         const dataProduct = await client.db('myLittleJungle').collection('dwwm').findOne({ _id: new ObjectId(id) });
         if (dataProduct){
-            console.log("data product find !");
             return dataProduct;
         }else{
-            console.log("no product find")
             return null;
         }
     }catch(err){

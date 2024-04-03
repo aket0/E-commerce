@@ -3,84 +3,92 @@ import { faXmark, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import "./Cart.css";
 import Link from "next/link";
 
-function Cart({ cartItems, handleMinus, handlePlus, handleDelete, totalProduct, totalSum }) {
+const Cart = ({ cartItems, handleMinus, handlePlus, handleDelete, totalProduct, totalSum }) => {
   
   if (cartItems.length > 0){
   
   return (
     <div className="cart">
-      <table>
-        <thead>
-          <tr>
-            <th colSpan={6}><h2 className="titleCart">My Shopping Cart</h2></th>
-          </tr>
-        </thead>
-        <tbody className="scrollable-body">
-          {cartItems.map((item, index) => (
-            <tr key={index}>
-              <td>
-                
+      <div id="cartTitle">
+        <h2>Plant Cart</h2>
+      </div>
+      <div id="table">
+          <div id="tableTitle">
+              <span id="SelectedPlant" colSpan={3}>Selected Plant</span>
+              <span id="totalPrice" colSpan={0}>Total Price</span>
+          </div>
+          <div id="cartLenght">{cartItems.map((item, index) => (
+            <div  key={index}>
+              <div id="item">
+                <div id="productSpect">
                   <img src={item.src} alt="productImage" />
-                  </td>
-                  <td>
-                  <span>{item.name}</span>
-                
-              </td>
-              <td>
-                <span className="itemQte">{item.qte}</span>
-              </td>
-              <td>
-                <span className="itemPrice">{item.price * item.qte} $</span>
-              </td>
-              <td>
-                <div className="cartIcon">
-                  <button onClick={() => handleMinus(index)}>
-                    <FontAwesomeIcon icon={faMinus} className="fa-lg" />
-                  </button>
-                  <button onClick={() => handlePlus(index)}>
-                    <FontAwesomeIcon icon={faPlus} className="fa-lg" />
-                  </button>
-                  <button onClick={() => handleDelete(index)}>
-                    <FontAwesomeIcon icon={faXmark} className="fa-lg" />
-                  </button>
+                  <div id="itemName">
+                  <span id="titleItem">{item.name}</span>
+                  <span id="itemQte">x{item.qte}</span>
+                  </div>
+                  </div>
+                  <div id="price">
+                <span id="itemPrice">${item.price * item.qte}</span>
                 </div>
-              </td>
-            </tr>
+            </div>
+            </div>
           ))}
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colSpan={2}>{totalProduct} product(s)</td>
-            <td colSpan={4}>Total: {totalSum} $</td>
-          </tr>
-        </tfoot>
-      </table>
+          </div>
+        
+      </div>
+      <div id="summary">
+      <span id="summarySpan">Order Summary</span>
+      <span id="totalSum">${totalSum}</span>
+      </div>
+      <div id="termOfServices">
+      <input type="checkbox" id="CheckTermsOfService" checked/>
+      <label id="agreeTerm">Agree to Terms of Service</label>
+      </div>
+      <div id="proceed">
+       <button><Link href="../../cart">Proceed to payment</Link></button>     
+      </div>
     </div>
-  );
+  )
 
 }else{
   return (
     <div className="cart">
-      <table>
-        <thead>
-          <tr>
-            <th colSpan={6}><h2 className="titleCart">My Shopping Cart</h2></th>
-          </tr>
-        </thead>
-        <tbody className="scrollable-body">
-          <tr>
-            <td colSpan={6} className="Emptycart">Your shopping cart is empty</td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colSpan={2}>{totalProduct} product(s)</td>
-            <td colSpan={4}>Total: {totalSum} $</td>
-          </tr>
-        </tfoot>
-      </table>
+      <div id="cartTitle">
+        <h2>Plant Cart</h2>
+      </div>
+      <div id="table">
+          <div id="tableTitle">
+              <span id="SelectedPlant" >Selected Plant</span>
+              <span id="totalPrice" >Total Price</span>
+          </div>
+          <div id="cartLenght">
+            <div >
+              <div id="Emptyitem">
+                <div id="emptySpect">
+                  <span id="emptyCart">Empty Cart</span>
+                  </div>
+                  <div id="price">
+                <span id="itemPrice"></span>
+                </div>
+            </div>
+            </div>
+         
+          </div>
+        
+      </div>
+      <div id="summary">
+      <span id="summarySpan">Order Summary</span>
+      <span id="totalSum">$0</span>
+      </div>
+      <div id="termOfServices">
+      <input type="checkbox" id="CheckTermsOfService" checked/>
+      <label id="agreeTerm">Agree to Terms of Service</label>
+      </div>
+      <div id="proceed">
+       <button><Link href="../../cart">Proceed to payment</Link></button>     
+      </div>
     </div>
-  );
+  )
 }
 }
 export default Cart;

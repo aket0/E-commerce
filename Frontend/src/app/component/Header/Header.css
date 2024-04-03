@@ -15,12 +15,17 @@ nav{
 }
 .navLogo{
     width: 80%;
+    display: flex;
+    flex-direction: row;
     text-align: left;
     align-self: center;
+    align-items: center;
+
 }
 h1 {
     color: white;
     font-size: 30px;
+    margin-right: 5px;
 }
 Button{
     border: none;

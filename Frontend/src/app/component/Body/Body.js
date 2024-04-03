@@ -32,11 +32,10 @@ function Body({ selectedOption, addToCart, list }) {
     const container = containerRef.current;
     const deltaX = event.deltaX;
     const deltaY = event.deltaY;
-
-    // Si le défilement horizontal est détecté, empêchez la propagation de l'événement
+    
     if (Math.abs(deltaX) > Math.abs(deltaY)) {
       event.preventDefault(); // Empêche le défilement vertical
-      container.scrollLeft += deltaX;; // Empêche la propagation de l'événement de défilement
+      container.scrollLeft += deltaX;
     }
   };
 

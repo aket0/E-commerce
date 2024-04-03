@@ -8,7 +8,7 @@
     
 
 }
-h2{
+#body h2{
     display: flex;
     justify-content: flex-start;
     width: 100%;

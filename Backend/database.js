@@ -10,7 +10,6 @@ client.connect();
 async function itemList() {
     try {
         const dataset = await client.db('myLittleJungle').collection('dwwm').find().toArray();
-        console.log("item collection return a successfull connexion")
         return JSON.stringify(dataset);
         
         
