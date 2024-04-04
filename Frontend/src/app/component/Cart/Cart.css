@@ -1,6 +1,6 @@
 
 .cart {
-    width: 600px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -136,7 +136,7 @@
     margin-top: 15px
 }
 #agreeTerm{
-    font-size: 0.7em;
+    font-size: 0.5em;
     color: gray;
 }
 #CheckTermsOfService{

@@ -2,6 +2,7 @@ import "./Login.css";
 import Switch from "react-switch";
 import { useState, useEffect } from "react";
 import {jwtDecode} from "jwt-decode";
+import Link from "next/link";
 
 const Login = (user) => {
   const [isLogged, setIsLogged] = useState(false)
@@ -82,15 +83,10 @@ const Login = (user) => {
             if (response.ok) {
                 const responseData = await response.json();
                 if (responseData.userExists) {
-                 
                  setIsSwitched(true);
-                  
-                  
+             
                 } else {
                   setIsLogged(false);
-                 
-                 
-                 
                 }
               } else {
                 const errorData = await response.json();
@@ -104,88 +100,33 @@ const Login = (user) => {
      
   
       return (
-        <div className="loginComponent">
+        <div id="loginComponent">
           {!isLogged ? (
             <div>
-              <div className="switchFrame">
-                <p className="switchValue" style={{ color: isSwitch ? "#000000" : "forestgreen" }}>
-                  Login
-                </p>
-                <Switch
-                  onChange={handleSwitchChange}
-                  checked={isSwitch}
-                  uncheckedIcon={false}
-                  checkedIcon={false}
-                  onHandleColor="#228B22"
-                  onColor="#d3d3d3"
-                  offHandleColor="#228B22"
-                  offColor="#d3d3d3"
-                />
-                <p className="switchValue" style={{ color: isSwitch ? "forestgreen" : "#000000" }}>
-                  Register
-                </p>
-              </div>
-              {!isSwitch ? (
-                <div className="loginFrame">
-                  <div className="userPhotoDiv"></div>
-                  <div className="loginFormDiv">
-                    <form onSubmit={handleSubmit} method="post">
+                <div id="loginFrame">
+                  <div id="userPhotoDiv">
+                  <h2 id="title">Login to the jungle.</h2>
+                  </div>
+                  <div id="loginFormDivi">
+                    <form id="formi" onSubmit={handleSubmit} method="post">
                       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-                      <label>
+                      <label id="email">
                         E-mail
                         <input type="email" value={email} placeholder="Your e-mail" onChange={(e) => setEmail(e.target.value)} required  name="email"  />
                       </label>
-                      <label>
+                      <label id="password">
                         Password
-                        <input type="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required  value={password} />
+                        <input type="password" name="password" placeholder="Your password" onChange={(e) => setPassword(e.target.value)} required  value={password} />
                       </label>
-                      <button type="submit">
-                        <span>log in</span>
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              ) : (
-                <div className="registerFrame">
-                  <div className="userPhotoDiv"></div>
-                  <div className="loginFormDiv">
-                    <form onSubmit={addNewUser} method="post">
-                    <label>Name
-                    <input type="text" placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} />
-                    </label>
-                    <label>Family Name
-                    <input type="text" placeholder="Your family name" value={familyName} onChange={(e) => setFamilyName(e.target.value)} />
-                    </label>
-                    <label>
-                      Address
-                      <input type="text" placeholder="Your address" value={address} onChange={(e) => setAddress(e.target.value)} />
-                      </label>
-                      <label>
-                      Postal Code
-                      <input type="text" placeholder="Your postal code" value={codePostal} onChange={(e) => setCodePostal(e.target.value)} />
-                      </label>
-                    <label>
-                      City
-                      <input type="text" placeholder="Your city" value={city} onChange={(e) => setCity(e.target.value)} />
-                    </label>        
-                    <label>
-                      Email
-                      <input type="email" placeholder="Your email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    </label>
-                    <label>
-                      Password
-                      <input type="password" placeholder="Your password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                    </label>
-                    <button type="submit">Register</button>
-
+                      <Link id="link" href={`http://localhost:3000/register`}>not a tribe member ? Register now !</Link>
+                      <button id="button" type="submit">Log in</button>
                     </form>
                     
                   </div>
                 </div>
-              )}
             </div>
           ) : (
-            <div className="loged">
+            <div id="loged">
             <h2>Welcome back {jwtToken.name} </h2>
             <ul>
                 <li>Mes information</li>

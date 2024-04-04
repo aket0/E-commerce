@@ -130,7 +130,7 @@ nav Button :hover {
   \*****************************************************************************************************************************************************************************************************************************************************************************/
 
 .cart {
-    width: 600px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -266,7 +266,7 @@ nav Button :hover {
     margin-top: 15px
 }
 #agreeTerm{
-    font-size: 0.7em;
+    font-size: 0.5em;
     color: gray;
 }
 #CheckTermsOfService{
@@ -334,9 +334,9 @@ tfoot td{
 /*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/component/Login/Login.css ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************/
-.loginComponent{
+#loginComponent{
     
-    width: 500px;
+    width: 450px;
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -344,83 +344,78 @@ tfoot td{
     justify-content: center;
     align-items: center;
     font-size: 0.5em;
-    border: 10px solid forestgreen;
     border-top: none;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     right: 0;
-    padding: 15px;
     z-index: 999;
-    button {
-        background-color: forestgreen;
-        width: 150px;
-        margin-top: 6%;
-        margin-bottom: 6%;
-        border-radius: 10px;
-        align-self: center;
-    }
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+   
        
 }
-.userPhotoDiv img {
-width: 50px;
-border: 8px solid forestgreen;
-border-radius: 120px;
-padding: 10px;
-}
 
-.switchFrame{
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-evenly;
-align-content: center;
-align-self: center;
-width: 100%;
-margin-bottom: 20px;
+
+#link {
+    margin-top: 5px;
+    
+    font-size: 0.5em;
+    color: gray;
+    text-align: center;
 }
 
 
-.loginFormDiv{
+#loginFormDivi{
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 align-self: center;
 width: 100%;
-button {
-    background-color: forestgreen;
-    width: 150px;
-    margin-top: 6%;
-    margin-bottom: 6%;
-    border-radius: 10px;
 }
 
-
-}
-
-form{
-width: 95%;
+#formi{
+width: 100%;
+display: flex;
+flex-direction: column;
 align-self: center;
 justify-content: center;
 font-size: 0.8em;
 
 }
-form button{
-    align-self: center;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    
+#title{
+    font-size: 1em;
+    margin-top: 45px;
+    margin-bottom: 50px;
 }
+#password{
+   font-size: 0.7em;
+   font-weight: bold;
+}
+#email{
+    font-size: 0.7em;
+    margin-top: 20px;
+    font-weight: bold;
+ }
 
-form label{
+
+#formi label{
 font-size: 0.8em;
 display: flex;
 flex-direction: column;
 text-align: left;
-margin-bottom: 20px;
 
 
+
+}
+#button{
+    background-color: #567361;
+    width: 90%;
+    font-size: 0.9em;
+    height: 35px;
+    margin-top: 35px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    align-self: center;
 }
 
 ::-webkit-input-placeholder { font-size: 0.7em; }
@@ -428,10 +423,25 @@ margin-bottom: 20px;
 :-ms-input-placeholder { font-size: 0.7em; } /* ie */
 input:-moz-placeholder { font-size: 0.7em; }
 
-form input{
+#email input{
 width: 100%;
 margin-top: 5px;
+font-size: 1em;
+height: 35px;
+border: none;
+border-bottom: 1px solid #567361;
+margin-bottom: 15px;
 }
+#password input{
+    width: 100%;
+    margin-top: 5px;
+    font-size: 1em;
+    height: 35px;
+
+    border: none;
+    border-bottom: 1px solid #567361;
+    margin-bottom: 15px;
+    }
 
 
 .switchValue{
@@ -492,15 +502,7 @@ form label{
     flex-direction: column;
     align-items: flex-start;
 }
-.loginFormDiv{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: auto;
-    align-self: center;
-}    
+ 
 
 }
 /*!*****************************************************************************************************************************************************************************************************************************************************************************!*\

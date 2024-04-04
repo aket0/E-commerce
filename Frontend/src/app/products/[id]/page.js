@@ -1,5 +1,6 @@
 "use client"
-import React, { useEffect, useState } from 'react';
+import React from "react" 
+import { useEffect, useState } from 'react';
 import Header from '../../component/Header/Header';
 import Cart from '../../component/Cart/Cart';
 import Login from '@/component/Login/Login';
