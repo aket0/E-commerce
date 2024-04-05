@@ -13,7 +13,7 @@ import dynamic from 'next/dynamic';
 
  function App() {
   const [list, setList] = React.useState([]);
-  const [user, setUser] = React.useState([]);
+  const [user, setUser] = React.useState(null);
 
 
 
@@ -50,6 +50,24 @@ import dynamic from 'next/dynamic';
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     
   }, [cartItems]);
+  
+  const [isLogged, setIsLogged] = useState(false);
+
+  useEffect(() => {
+    // Check if user is logged in on component mount
+    const token = localStorage.getItem("jwtToken");
+    if (token) {
+      setIsLogged(true);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    // Clear token from localStorage
+    localStorage.removeItem("jwtToken");
+    setIsLoggedIn(false);
+  };
+
+ 
   
   const toggleCart = () => {
       setCartVisible(!isCartVisible);
@@ -130,8 +148,8 @@ import dynamic from 'next/dynamic';
 
   return (
     <div className="App">
-      <Header onCartToggle={toggleCart} totalProduct={totalProduct} onLogginToggle={toggleLogin} user={user}/>
-      {isLoginVisible && <Login />}
+      <Header onCartToggle={toggleCart} totalProduct={totalProduct} onLogginToggle={toggleLogin} />
+      {isLoginVisible && <Login user={user} isLogged={isLogged}/> }
       {isCartVisible && <Cart cartItems={cartItems} handleMinus={handleMinus} handlePlus={handlePlus} handleDelete={handleDelete} totalProduct={totalProduct} totalSum={totalSum}  />}
       <Navbar onSelect={handleSelect} onWeaterSelect={handleWeater} />
       <Body selectedOption={selectedOption} addToCart={addToCart} list={list}/>

@@ -36,6 +36,14 @@ const LoginPage = () => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     
   }, [cartItems]);
+  useEffect(() => {
+    if (typeof localStorage !== 'undefined') {
+   
+    const storedToken = localStorage.getItem("jwtToken") || [];
+    if (storedToken){
+    setUser(storedToken);
+    }
+}}, []);
   
   const toggleCart = () => {
       setCartVisible(!isCartVisible);

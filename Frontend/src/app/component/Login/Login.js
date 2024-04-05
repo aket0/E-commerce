@@ -1,11 +1,12 @@
 import "./Login.css";
-import Switch from "react-switch";
 import { useState, useEffect } from "react";
 import {jwtDecode} from "jwt-decode";
 import Link from "next/link";
+import Image from "next/image";
+import mask from "../../../../public/assetes/userMask.png"
 
-const Login = (user) => {
-  const [isLogged, setIsLogged] = useState(false)
+const Login = ({user,}) => {
+  const [isLogged, setIsLogged] = useState(false);
   const [isSwitch, setIsSwitched] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
   const [name, setName] = useState("");
@@ -23,6 +24,15 @@ const Login = (user) => {
   const handleSwitchChange = (checked) => {
     setIsSwitched(checked);
   };
+  useEffect(() => {
+    const storedToken = localStorage.getItem("jwtToken");
+    if (storedToken) {
+      // S'il y a un token JWT dans le localStorage, l'utilisateur est considéré comme connecté
+      const decodedToken = jwtDecode(storedToken);
+      setJwtToken(decodedToken);
+      setIsLogged(true);
+    }
+  }, []);
   
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -43,7 +53,7 @@ const Login = (user) => {
                 const token = responseData.userExists.token
                 const decodedToken = jwtDecode(token)
                 setJwtToken(decodedToken);
-                console.log(decodedToken); 
+                localStorage.setItem("jwtToken", token)
             } else {
                 setErrorMessage("Email or password is incorrect");
             }
@@ -127,14 +137,20 @@ const Login = (user) => {
             </div>
           ) : (
             <div id="loged">
-            <h2>Welcome back {jwtToken.name} </h2>
-            <ul>
-                <li>Mes information</li>
-                <li>Mes achat</li>
-                <li>ai ai ai</li>
-                <button type="submit" onClick={() => setIsLogged(false) }>Logout</button>
-
+            <Image id="mask" src={mask}/>
+            <h3 id="titleLogged">{jwtToken.name + " " +jwtToken.familyName} </h3>
+            <ul id="userOption">
+                <li>My profil</li>
+                <li>My Purchase</li>
             </ul>
+                <button id="button"  type="submit"
+              onClick={() => {
+                setIsLogged(false);
+                setJwtToken(null);
+                localStorage.removeItem("jwtToken");
+              }} >Logout</button>
+
+            
 
             </div>
           )}

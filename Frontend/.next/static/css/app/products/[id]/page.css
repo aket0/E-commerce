@@ -442,10 +442,44 @@ margin-bottom: 15px;
     border-bottom: 1px solid #567361;
     margin-bottom: 15px;
     }
+#loged{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}    
+#titleLogged{
+    margin-top: 15px;
+    font-size: 1em;
+    margin-bottom: 25px;
+}
+#userOption li{
+    font-size: 1.5em;
+    text-align: left;
+}
 
-
-.switchValue{
-font-size: 0.8em;
+#userOption{
+    align-self: center;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    font-size: 0.5em;
+    
+}
+#userOption button{
+    width: 250px;
+    background-color: #567361;
+}
+#mask{
+    width: 120px;
+    height: 120px;
+    border-radius: 120px;
+    align-self: center;
+    margin-top: 25px;
+    outline-offset: 5px;
+    outline: 5px solid #567361;
 }
 
 @media screen and (max-width: 500px){

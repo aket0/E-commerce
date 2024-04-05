@@ -10,7 +10,7 @@ import Item from '../../component/Item/Item';
 const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const [list, setList] = React.useState([]);
-  const [user, setUser] = React.useState([]);
+  const [user, setUser] = React.useState(null);
 
 
 
@@ -21,7 +21,21 @@ const ProductPage = () => {
       .then(data => setList(data))
    
   }, []);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  useEffect(() => {
+    // Check if user is logged in on component mount
+    const token = localStorage.getItem("jwtToken");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    // Clear token from localStorage
+    localStorage.removeItem("jwtToken");
+    setIsLoggedIn(false);
+  };
      
 
   const [selectedOption, setSelectedOption] = useState(null);

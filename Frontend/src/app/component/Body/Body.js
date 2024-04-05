@@ -34,7 +34,7 @@ function Body({ selectedOption, addToCart, list }) {
     const deltaY = event.deltaY;
     
     if (Math.abs(deltaX) > Math.abs(deltaY)) {
-      event.preventDefault(); // Empêche le défilement vertical
+      event.preventDefault(); 
       container.scrollLeft += deltaX;
     }
   };
